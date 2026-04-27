@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Travis Scott </title>
+</head>
+
+<body>
+
+    <h1> <strong> Discogrfía </strong></h1>
+
+    <div class="flex">
+        <div class="elemento">
+            <img src="https://m.media-amazon.com/images/I/81UIqmn17WL._UF1000,1000_QL80_.jpg" alt="Rodeo">
+        </div>
+
+        <div class="elemento">
+            <img src="https://cdn-images.dzcdn.net/images/cover/7df7ac6028591a5622f24cf32a555510/1900x1900-000000-81-0-0.jpg"
+                alt="Astroworld">
+        </div>
+
+        <div class="elemento">
+            <img src="https://m.media-amazon.com/images/I/61EhflTm0YL.jpg" alt="Utopia">
+        </div>
+
+    </div>
+    
+    <h2>¿Qué tan popular es Travis?</h2>
+    <p id="popularidad"></p>
+    
+    <h2>Canciones populares</h2>
+    <ul id="canciones"></ul>
+    
+    <h2>Álbum destacado</h2>
+    <p id="descripcion"></p>
+
+
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        .flex {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 500px;
+            background-color: rgb(80, 12, 199);
+        }
+
+
+        .elemento {
+            padding: 15px;
+            margin: 10px;
+        }
+
+        img {
+            width: 15vw;
+            height: 100%;
+        }
+    </style>
+
+    <script>
+
+        let streams = 900;
+        if (streams > 1000) {
+            document.getElementById("popularidad").textContent = "Es un artista legendario.";
+        } else if (streams > 500) {
+            document.getElementById("popularidad").textContent = "Es un artista muy popular.";
+        } else {
+            document.getElementById("popularidad").textContent = "Es un artista poco conocido.";
+        }
+
+        let canciones = ["SICKO MODE", "ANTIDOTE", "GOOSEBUMPS", "STARGAZING", "HYAENA"];
+        for (let i = 0; i < 5; i++) {
+            document.getElementById("canciones").innerHTML += "<li>" + (i + 1) + ". " + canciones[i] + "</li>";
+        }
+
+        let album = "Astroworld";
+        switch (album) {
+            case "Rodeo":
+                document.getElementById("descripcion").textContent = "Rodeo";
+                break;
+            case "Astroworld":
+                document.getElementById("descripcion").textContent = "Astroworld";
+                break;
+            case "Utopia":
+                document.getElementById("descripcion").textContent = "Utopia";
+                break;
+            default:
+                document.getElementById("descripcion").textContent = "Álbum no encontrado.";
+        }
+
+    </script>
+
+</body>
+
+</html>
